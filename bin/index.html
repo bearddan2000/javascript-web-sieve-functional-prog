@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Functional Segmented Sieve</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Functional Segmented Sieve</a>
+  </nav>
+  ​<div class="container" style="margin:2em;">
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="low">Low:</label>
+        <input type="text" id="low" name="low" value="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <label for="high">High:</label>
+        <input type="text" id="high" name="high" value="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <textarea name="answer" id="a" cols="30" rows="10"></textarea>
+        <DIV></DIV>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <button type="button" name="button">Find primes</button>
+        <DIV></DIV>
+      </div>
+    </div>
+  </DIV>
+  <script src="js/seg-sieve.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $(function() {
+      $('button').click(function() {
+        $('textarea').empty();
+        var low = ToInt('low');
+        var high = ToInt('high');
+        var output = main(low, high);
+        $('textarea').text(output);
+      });
+    });
+  </script>
+</body>
+
+</html>
